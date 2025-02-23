@@ -16,7 +16,7 @@ body {
 
 #top {
     width: 20em;
-    height: 76px;
+    height: 1.9em;
     background: transparent linear-gradient(90deg, #1D7FFF 0%, #93A1FC 100%) 0% 0% no-repeat padding-box;
 
     display: flex;
@@ -29,56 +29,36 @@ body {
     color: white;
 }
 
-h1 {
+#top > h1 {
     padding: 10px;
-    margin-left: 30px;
+    margin-left: 0.75em;
     height: auto;
 
     font-size: 1em;
 }
 
-#lock {
-    width: 40px;
-    height: 40px;
-}
-
-#help {
-    width: 50px;
-    height: 50px;
-    
-    background: white;
-    border-radius: 10px;
-    opacity: 1;
-}
-
-#cross-mark {
-    width: 55px;
-    height: 55px;
-}
-
 #top > .item:nth-child(3){
-    margin-right: 20px;
+    margin-right: 0.5em;
 
     flex-grow: 1;
     display: flex;
     flex-direction: row-reverse;
 }
-#top > .item:nth-child(3) > img{
-    z-index: 2;
-}
+#help {
+    font-size: 1em;
+    color: #4F5EBF;
 
-#top > .item:nth-child(3) > div{
-    margin: 10px;
-    width: 40px;
-    height: 40px;
-    z-index: 1;
-
-    position: absolute;
-
+    width: 1.25em;
+    height: 1.25em;
+    
     background-color: white;
+    border-radius: 10px;
 }
+
+/* #content */
 
 #content {
+    font-size: 1em;
     width: 100%;
     height: auto;
 
@@ -87,18 +67,50 @@ h1 {
     align-items: center;
 }
 
-#search-mark {
-    width: 250px;
-    height: 250px;
-
-    margin-top: 60px;
+/* search mark in content */
+#content > .item:nth-child(1) {
+    font-size: 1em;
+    
+    width: 8em;
+    height: 8em;
+    position: relative;
 }
 
+#search-mark {
+    font-size: 1em;
+
+    top: 1em;
+    width: 7em;
+    height: 7em;
+    position: absolute;
+}
+#star_big {
+    font-size: 1em;
+
+    left: 1.25em;
+    top: 2.8em;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+
+}
+#star_small {
+    font-size: 1em;
+
+    left: 2.5em;
+    top: 2.4em;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+}
+
+/* Start Searching */
 #content > .item:nth-child(2) {
-    top: 402px;
-    left: 254px;
-    width: 292px;
-    height: 53px;
+    font-size: 1em;
+    color: white;
+
+    width: 7.5em;
+    height: 1.25em;
     margin: 10px;
 
     display: flex;
@@ -106,9 +118,7 @@ h1 {
     justify-content: space-around;
     
     background: transparent linear-gradient(90deg, #53D7E7 0%, #1D7FFF 100%) 0% 0% no-repeat padding-box;
-    border-radius: 20px;
-
-    color: white;
+    border-radius: 0.5em;
 }
 
 p {
