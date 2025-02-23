@@ -1,0 +1,63 @@
+#header {
+    width: 20em;
+    height: 76px;
+    background: transparent linear-gradient(90deg, #1D7FFF 0%, #93A1FC 100%) 0% 0% no-repeat padding-box;
+
+    display: flex;
+    align-items: center;
+
+    font-family: "Pretendard";
+    font-weight: 700;
+    font-size: 1em;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    padding: 10px;
+    margin-left: 30px;
+    height: auto;
+
+    font-size: 1em;
+}
+
+#lock {
+    width: 40px;
+    height: 40px;
+}
+
+#help {
+    width: 50px;
+    height: 50px;
+    
+    background: white;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+#cross-mark {
+    width: 55px;
+    height: 55px;
+}
+
+#header > .item:nth-child(3){
+    margin-right: 20px;
+
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row-reverse;
+}
+#header > .item:nth-child(3) > img{
+    z-index: 2;
+}
+
+#header > .item:nth-child(3) > div{
+    margin: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 1;
+
+    position: absolute;
+
+    background-color: white;
+}
