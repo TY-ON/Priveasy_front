@@ -1,17 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Header from "../components/Header";
 
 import "../styles/Search.css"
 
 import search_mark from "../assets/search-mark.png"
-import star_big from "../assets/star2.svg"
-import star_small from "../assets/star3.svg"
 
 const Result = () => {
-
-
+    const location = useLocation();
+    const { data } = location.state;
 
     return (
     <>
@@ -19,18 +17,11 @@ const Result = () => {
         <div id="content">
             <div className="title">
                 <img src={search_mark} id="search-mark"/>
-                <h1></h1>
+                <h2>요약 결과</h2>
+                <h2 className="link">www.link.com</h2>
             </div>
-            <div className="item">
-                <img src={star_big} id="star_big" className="item"/>
-                <img src={star_small} id="star_small" className="item"/>
-            </div>
-
-            <div className="item">
-                <p>
-                    Start Searching
-                </p>
-            </div>
+            <p className="data">{ data }</p>
+            <Link to="/">go to home</Link>
         </div>
     </>
     );

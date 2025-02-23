@@ -1,0 +1,1 @@
+export const BACKEND_PRIVACY_URL = "http://localhost/api/analyzePolicy/test";

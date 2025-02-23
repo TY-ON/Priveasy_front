@@ -4,15 +4,13 @@ import { Link, useNavigate } from "react-router-dom";
 const Home = () => {
     let navigate = useNavigate();
 
-    navigate("/Search");
-
     return (
-        <div onLoad={ () => {navigate("/Search");}}>
+        <div onLoad={ () => { navigate("/Search"); }}>
             <Link to="/Search">Search</Link>
             <button 
-                onClick={ () => {navigate("/Search");}}
+                onClick={ () => {navigate("/Result");}}
             >
-                Search
+                Result
             </button>
         </div>
     );
