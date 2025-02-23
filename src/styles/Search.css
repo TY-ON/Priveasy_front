@@ -1,62 +1,4 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
-
-* {
-    padding: 0px;
-    margin: 0px;
-}
-
-body {
-    width: 800px;
-    height: 500px;
-
-    font-family: "Pretendard";
-    font-size: 40px;
-    font-weight: 400;
-}
-
-#top {
-    width: 20em;
-    height: 1.9em;
-    background: transparent linear-gradient(90deg, #1D7FFF 0%, #93A1FC 100%) 0% 0% no-repeat padding-box;
-
-    display: flex;
-    align-items: center;
-
-    font-family: "Pretendard";
-    font-weight: 700;
-    font-size: 1em;
-    text-align: center;
-    color: white;
-}
-
-#top > h1 {
-    padding: 10px;
-    margin-left: 0.75em;
-    height: auto;
-
-    font-size: 1em;
-}
-
-#top > .item:nth-child(3){
-    margin-right: 0.5em;
-
-    flex-grow: 1;
-    display: flex;
-    flex-direction: row-reverse;
-}
-#help {
-    font-size: 1em;
-    color: #4F5EBF;
-
-    width: 1.25em;
-    height: 1.25em;
-    
-    background-color: white;
-    border-radius: 10px;
-}
-
 /* #content */
-
 #content {
     font-size: 1em;
     width: 100%;
@@ -103,6 +45,7 @@ body {
     height: 1em;
     position: absolute;
 }
+
 
 /* Start Searching */
 #content > .item:nth-child(2) {
