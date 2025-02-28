@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Header from "../components/Header";
 
-import "../styles/Search.css"
+import styles from "../styles/Search.module.css"
 
 import search_mark from "../assets/search-mark.png"
 import star_big from "../assets/star2.svg"
@@ -28,14 +28,13 @@ const SearchButton = () => {
             }
         })
         .then((res) => {
-            console.log(res.data);
-            if (res.data.privacyText){
-                navigate("/Result", {
-                    state: { data: res.data.privacyText },
+            if (res.data){
+                navigate("/result", {
+                    state: { data: res.data },
                 });
             }
             else{
-                navigate("/Error");
+                navigate("/error");
             }
         })
         .catch((err) => {
@@ -44,15 +43,15 @@ const SearchButton = () => {
     }
 
     return (        
-        <div id="content">
-            <div className="item">
-                <img src={search_mark} id="search-mark"/>
-                <img src={star_big} id="star_big" className="item"/>
-                <img src={star_small} id="star_small" className="item"/>
+        <div id={styles.content}>
+            <div className={styles.item}>
+                <img src={search_mark} id={styles["search-mark"]}/>
+                <img src={star_big} id={styles["star_big"]} className={styles["item"]}/>
+                <img src={star_small} id={styles["star_small"]} className={styles["item"]}/>
             </div>
 
-            <div className="item" onClick={ () => { summarizePrivacy();} }>
-                <p>
+            <div className={styles.item} onClick={ () => { summarizePrivacy();} }>
+                <p id={styles.p}>
                     Start Searching
                 </p>
             </div>

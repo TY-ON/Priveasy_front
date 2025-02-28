@@ -5,10 +5,12 @@ const Home = () => {
     let navigate = useNavigate();
 
     return (
-        <div onLoad={ () => { navigate("/Search"); }}>
-            <Link to="/Search">Search</Link>
+        <div onLoad={ () => { navigate("/search"); }}>
+            <Link to="/search">Search</Link>
             <button 
-                onClick={ () => {navigate("/Result");}}
+                onClick={ () => {navigate("/result", {
+                    state: { data: "test" },
+                });}}
             >
                 Result
             </button>
@@ -17,4 +19,3 @@ const Home = () => {
 }
 
 export default Home; 
-
