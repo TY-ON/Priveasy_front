@@ -59,6 +59,7 @@ const Search = () => {
         })
         .then((res) => {
             if (res.data){
+                console.log(res.data);
                 navigate("/result", {
                     state: { data: res.data },
                 });

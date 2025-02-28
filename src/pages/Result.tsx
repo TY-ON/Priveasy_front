@@ -14,11 +14,14 @@ import term_img from "../assets/result/term.png"
 import third_party_img from "../assets/result/third_party.png"
 
 const Result = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const { data } = location.state;
 
-    if (data["개인정보 처리 목적"]) {
+    const img_set = [term_img, subject_img, object_img, commission_img, deletion_img, third_party_img];
 
+    if (!data || typeof data !== "object") {
+        navigate("/error");
     }
 
     return (
@@ -31,14 +34,19 @@ const Result = () => {
                 <h2 className={styles.link}>www.link.com</h2>
             </div>
             <div className={styles["summary-grid"]}>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
-                <SummaryItem img={object_img} subject="개인정보 처리목적" data="내용"/>
+                { Object.entries(data).map( ([key, value], i ) => { 
+                    if (typeof value === "string"){
+                        return <SummaryItem img={img_set[i]} subject={key} data={value}/>; 
+                    }
+                    if (typeof value === "object"){
+                        var parse_value = JSON.stringify(value);
+                        parse_value = parse_value.replace(/{|}|"|\[|\]/g, "");
+                        return <SummaryItem img={img_set[i]} subject={key} data={parse_value}/>; 
+                    }
+                    return null;
+                })}
             </div>
-            <p className={styles.data}>{ data }</p>
+            <p className={styles.data}>{ data.content }</p>
             <Link to="/">go to home</Link>
         </div>
     </>

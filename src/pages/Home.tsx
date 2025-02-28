@@ -7,7 +7,7 @@ const Home = () => {
     let navigate = useNavigate();
 
     return (
-        <div onLoad={ () => { /*navigate("/search");*/ }}>
+        <div onLoad={ () => { navigate("/search"); }}>
             <Link to="/search">Search</Link>
             <Link to="/error">Error</Link>
             <button 
