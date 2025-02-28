@@ -1,5 +1,5 @@
 const getPageInfo = async () => {
-    return new Promise((resolve, reject) => {
+    return new Promise<string>((resolve, reject) => {
         // 현재 활성 탭 정보 가져오기
         chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (tabs[0]?.id) {

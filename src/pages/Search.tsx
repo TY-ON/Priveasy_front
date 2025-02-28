@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, Dispatch, SetStateAction } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import Header from "../components/Header";
+import Loading from "../components/Loading";
 
 import styles from "../styles/Search.module.css"
 
@@ -13,13 +14,42 @@ import star_small from "../assets/star3.svg"
 import getPageInfo from "../utils/info";
 import { BACKEND_PRIVACY_URL } from "../utils/consts";
 
-const SearchButton = () => {
-    let navigate = useNavigate();
+type SearchButtonProps = {
+    setUrl: Dispatch<SetStateAction<string>>;
+}
 
-    const summarizePrivacy = async () => {
-        const url = await getPageInfo();
-        console.log(url);
-        
+const SearchButton = ({ setUrl }: SearchButtonProps) => {
+    const navigate = useNavigate();
+    const invokeSummarize = async () => {
+        try {
+            const url: string = await getPageInfo();
+            setUrl(url);
+        } catch (error) {
+            console.error(error);
+            navigate("/error");
+        }
+    }
+
+    return (        
+        <div id={styles.content}>
+            <div className={styles.item}>
+                <img src={search_mark} id={styles["search-mark"]}/>
+                <img src={star_big} id={styles["star_big"]} className={styles["item"]}/>
+                <img src={star_small} id={styles["star_small"]} className={styles["item"]}/>
+            </div>
+
+            <div className={styles.item} onClick={ () => { invokeSummarize();} }>
+                <p id={styles.p}>
+                    Start Searching
+                </p>
+            </div>
+        </div>
+    );
+}
+
+const Search = () => {
+    const navigate = useNavigate();
+    const summarizePrivacy = async (url: string) => {
         axios({
             method: 'GET',
             url: BACKEND_PRIVACY_URL,
@@ -38,33 +68,21 @@ const SearchButton = () => {
             }
         })
         .catch((err) => {
+            navigate("/error");
             console.error(err);
         });
     }
+    
+    const [url, setUrl] = useState("");
 
-    return (        
-        <div id={styles.content}>
-            <div className={styles.item}>
-                <img src={search_mark} id={styles["search-mark"]}/>
-                <img src={star_big} id={styles["star_big"]} className={styles["item"]}/>
-                <img src={star_small} id={styles["star_small"]} className={styles["item"]}/>
-            </div>
-
-            <div className={styles.item} onClick={ () => { summarizePrivacy();} }>
-                <p id={styles.p}>
-                    Start Searching
-                </p>
-            </div>
-        </div>
-    );
-}
-
-const Search = () => {
+    if (url) {
+        summarizePrivacy(url);
+    }
 
     return (
     <>
         <Header/>
-        <SearchButton/>
+        { url ? <Loading /> : <SearchButton setUrl={setUrl}/> }
     </>
     );
 }

@@ -1,12 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+import Loading from "../components/Loading"
+
 const Home = () => {
     let navigate = useNavigate();
 
     return (
-        <div onLoad={ () => { navigate("/search"); }}>
+        <div onLoad={ () => { /*navigate("/search");*/ }}>
             <Link to="/search">Search</Link>
+            <Link to="/error">Error</Link>
             <button 
                 onClick={ () => {navigate("/result", {
                     state: { data: "test" },
@@ -14,6 +17,8 @@ const Home = () => {
             >
                 Result
             </button>
+            
+            <Loading/>
         </div>
     );
 }

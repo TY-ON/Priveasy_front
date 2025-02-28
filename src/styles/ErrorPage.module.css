@@ -1,0 +1,52 @@
+/* #content */
+#content {
+    font-size: 1em;
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* search mark in content */
+#content > .item:nth-child(1) {
+    font-size: 1em;
+    
+    padding-top: 1.5em;
+    width: 6em;
+    height: 6em;
+    position: relative;
+}
+
+#warning-mark {
+    font-size: 1em;
+
+    width: 5.4em;
+    height: 4.7em;
+    position: absolute;
+
+    margin: 0 auto;
+
+    /* #E54747 */
+    filter: invert(60%) sepia(58%) saturate(5811%) hue-rotate(332deg) brightness(82%) contrast(93%);
+}
+
+
+/* Start Searching */
+#content > .item:nth-child(2) {
+    font-size: 1em;
+
+    height: 1.25em;
+    margin: 10px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#warning-text {
+    color: black;
+    filter: invert(60%) sepia(58%) saturate(5811%) hue-rotate(332deg) brightness(82%) contrast(93%);
+    text-align: center;
+}

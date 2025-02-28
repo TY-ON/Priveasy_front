@@ -17,6 +17,10 @@ const Result = () => {
     const location = useLocation();
     const { data } = location.state;
 
+    if (data["개인정보 처리 목적"]) {
+
+    }
+
     return (
     <>
         <Header/>
