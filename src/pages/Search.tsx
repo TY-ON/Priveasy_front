@@ -61,7 +61,7 @@ const Search = () => {
             if (res.data){
                 console.log(res.data);
                 navigate("/result", {
-                    state: { data: res.data },
+                    state: { data: res.data, url: url },
                 });
             }
             else{

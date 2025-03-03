@@ -12,8 +12,9 @@ h3 {
     font-size: 0.45em;
 }
 
-p {
+.p {
     font-size: 0.3em;
+    width: 20em;
 }
 
 .title {

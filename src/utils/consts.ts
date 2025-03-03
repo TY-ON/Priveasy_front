@@ -1,1 +1,1 @@
-export const BACKEND_PRIVACY_URL = "http://localhost:30010/api/analyzePolicy/";
+export const BACKEND_PRIVACY_URL = "https://priveasy.ty0507.xyz/api/analyzePolicy/";

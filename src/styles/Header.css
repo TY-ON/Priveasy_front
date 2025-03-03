@@ -29,7 +29,14 @@
     flex-direction: row-reverse;
 }
 
-#help {
+#help__wrap {
+    font-size: 1em;
+
+    position: relative; 
+    display: inline-block;
+}
+
+#help__box {
     font-size: 1em;
     color: #4F5EBF;
 
@@ -38,4 +45,114 @@
     
     background-color: white;
     border-radius: 10px;
+}
+
+#help__tooltip {
+    font-size: 1em;
+
+    position:absolute; 
+    top: 2.25em; 
+    right: 0;
+
+    background: transparent linear-gradient(90deg, #53D7E7 0%, #1D7FFF 90%) 0% 0% no-repeat padding-box;
+    padding: 10px; 
+
+    color: white; 
+    text-align: center; 
+    display: none;
+    width: 14em;
+    height: 4em;
+    z-index: 10;
+    
+    border-radius: 20px;
+}
+
+#help__tooltip:after{
+    display: block; 
+    content: ''; 
+    position: absolute; 
+    
+    top: -18px; 
+    right: 1px; 
+    width: 0px; 
+    height: 0px; 
+
+    border-top: 32px solid none; 
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-bottom: 32px solid #1D7FFF;
+    border-radius: 5px;
+  } 
+#help__wrap:hover #help__tooltip{
+    display: block;
+}
+
+#help__tooltip__wrapper {
+    display: flex;
+    height: 4em;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+
+#help__tooltip__icon {
+    width: 3em;
+    height: 3em;
+
+    position: relative;
+}
+
+#star_big {
+    font-size: 1em;
+
+    left: -0.5em;
+    top: 0.8em;
+    width: 2em;
+    height: 2em;
+    position: absolute;
+
+    filter: brightness(1000%);
+}
+#star_small {
+    font-size: 1em;
+
+    left: 0.65em;
+    top: 0.5em;
+    width: 1em;
+    height: 1em;
+    position: absolute;
+
+    filter: brightness(1000%);
+}
+
+#help__tooltip__text {
+    padding: 0.25em;
+}
+
+#home {
+    font-size: 1em;
+    
+    width: 1em;
+    height: 1em;
+}
+
+div.home {
+    font-size: 1em;
+    color: #4F5EBF;
+
+    width: 1.25em;
+    height: 1.25em;
+    
+    background-color: white;
+    border-radius: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+#header > .item > .item {
+    margin: 0.2em;
 }

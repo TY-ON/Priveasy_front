@@ -11,7 +11,7 @@ function App() {
   return (
     <MemoryRouter>
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Search/>} />
         <Route path="/search" element={<Search/>} />
         <Route path="/result" element={<Result/>} />
         <Route path="/error" element={<ErrorPage/>} />
